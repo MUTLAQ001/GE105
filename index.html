@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Test your knowledge in the GE105 course with an interactive and modern quiz experience.">
+	<meta name="theme-color" content="#0a0a0a">
+	<title>GE105 - منصة الاختبارات</title>
+    <link id="favicon" rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5MCIgZmlsbD0iIzBhMGEwYSIvPjxwYXRoIGZpbGw9IiM1ZTljZmYiIGQ9Ik0yNTYgNzBDMTUyLjEgNzAgNzAgMTUyLjEgNzAgMjU2czgyLjEgMTg2IDE4NiAxODZjMTAzLjkgMCAxODYtODIgMTg2LTE4NlM0NDIgNzAgMzM4LjEgNzBIMjU2ek0xNjEgMTkyaDI0NXYyNEgxNjF6TTE2MSAyNDBoMTgwdjI0SDE2MXpTMTYxIDI4OGgxMTV2MjRIMTYxek0zNjIgMzQwYTMyIDMyIDAgMSAxIDAtNjQgMzIgMzIgMCAwIDEgMCA2NHoiLz48L3N2Zz4=">
+	<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22GE105%20Quiz%20Platform%22%2C%22short_name%22%3A%22GE105%20Quiz%22%2C%22description%22%3A%22Test%20your%20knowledge%20in%20the%20GE105%20course%20with%20an%20interactive%20and%20modern%20quiz%20experience.%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230a0a0a%22%2C%22theme_color%22%3A%22%230a0a0a%22%2C%22orientation%22%3A%22portrait-primary%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5MCIgZmlsbD0iIzBhMGEwYSIvPjxwYXRoIGZpbGw9IiM1ZTljZmYiIGQ9Ik0yNTYgNzBDMTUyLjEgNzAgNzAgMTUyLjEgNzAgMjU2czgyLjEgMTg2IDE4NiAxODZjMTAzLjkgMCAxODYtODIgMTg2LTE4NlM0NDIgNzAgMzM4LjEgNzBIMjU2ek0xNjEgMTkyaDI0NXYyNEgxNjF6TTE2MSAyNDBoMTgwdjI0SDE2MXpTMTYxIDI4OGgxMTV2MjRIMTYxek0zNjIgMzQwYTMyIDMyIDAgMSAxIDAtNjQgMzIgMzIgMCAwIDEgMCA2NHoiLz48L3N2Zz4%3D%22%2C%22sizes%22%3A%22192x192%20512x512%22%2C%22type%22%3A%22image/svg%2Bxml%22%7D%5D%7D">
+	<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA tribulationsPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5MCIgZmlsbD0iIzBhMGEwYSIvPjxwYXRoIGZpbGw9IiM1ZTljZmYiIGQ9Ik0yNTYgNzBDMTUyLjEgNzAgNzAgMTUyLjEgNzAgMjU2czgyLjEgMTg2IDE4NiAxODZjMTAzLjkgMCAxODYtODIgMTg2LTE4NlM0NDIgNzAgMzM4LjEgNzBIMjU2ek0xNjIgMTkyaDI0NXYyNEgxNjF6TTE2MSAyNDBoMTgwdjI0SDE2MXpTMTYxIDI4OGgxMTV2MjRIMTYxek0zNjIgMzQwYTMyIDMyIDAgMSAxIDAtNjQgMzIgMzIgMCAwIDEgMCA2NHoiLz48L3N2Zz4%3D">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="GE105 Quiz">
+	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap");
+		:root{--color-primary:#5e9cff;--color-primary-dark:#4b7dcc;--color-danger-red:#ff5252;--color-warning-gold:#ffc400;--color-save-green:#00c853;--color-bg:#0a0a0a;--color-card:rgba(20,20,22,0.75);--color-border:rgba(255,255,255,0.1);--color-text:#e0e0e0;--color-text-muted:#999;--font-body:"Tajawal",sans-serif;--font-title:"Tajawal",sans-serif;--radius:20px;--radius-md:16px;--radius-full:999px;--transition:0.3s cubic-bezier(0.25,0.8,0.25,1);--transition-smooth:0.5s cubic-bezier(0.2,0.8,0.2,1);--rgb-primary:94,156,255;--rgb-warning:255,196,0;--rgb-danger:255,82,82;--rgb-correct:0,200,83;--primary-hue:217;--secondary-hue:257;}
+		* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+		html{ scroll-behavior:smooth; scrollbar-gutter: stable; scrollbar-width: none; }
+		body.modal-open { overflow: hidden !important; }
+		body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) { overflow-y: hidden !important; }
+		::-webkit-scrollbar { display: none; }
+		@keyframes gradient-animation{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+		@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+		@keyframes scaleIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+		@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+		@keyframes move-nebula{0%{transform:translate(0,0) rotate(0deg) scale(1.2)}50%{transform:translate(10vw,5vh) rotate(180deg) scale(1.5)}100%{transform:translate(0,0) rotate(360deg) scale(1.2)}}
+		*:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:6px}
+        body{font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale; transition: background-color var(--transition-smooth), color var(--transition-smooth); -ms-overflow-style: none;}
+		.cosmic-bg-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;overflow:hidden}
+		#starfield-canvas{position:absolute;top:0;left:0;width:100%;height:100%}
+		.nebula-glow{position:absolute;top:50%;left:50%;width:90vmax;height:90vmax;margin-top:-45vmax;margin-left:-45vmax;background:radial-gradient(circle,hsl(var(--primary-hue),90%,60%,.15) 0%,hsl(var(--secondary-hue),80%,50%,.1) 40%,transparent 70%);filter:blur(100px);border-radius:50%;animation:move-nebula 90s infinite alternate ease-in-out;transition:opacity .5s ease,background .5s ease}
+		.light-mode .nebula-glow{opacity:.5;filter:blur(120px)}
+		.app{min-height:100vh;position:relative;padding:2rem 1rem;}
+		.container{width:100%;max-width:800px;z-index:1;display:flex;flex-direction:column;gap:1.5rem;margin:0 auto;position:relative}
+		.header{text-align:center;animation:fadeInUp .8s var(--transition-smooth) both}
+		.title{font-family:var(--font-title);font-weight:700;font-size:2.8rem;margin-bottom:0.25rem;background:linear-gradient(90deg,var(--color-primary-dark),var(--color-primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:gradient-animation 5s ease-in-out infinite;}
+		.subtitle{color:var(--color-text-muted);font-size:1.1rem;animation:fadeInUp .8s var(--transition-smooth) .2s both; letter-spacing: 0.5px;}
+		.card{background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius);padding:1.5rem;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition: background-color var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);position:relative;animation:scaleIn .8s var(--transition-smooth) .4s both;box-shadow: 0 16px 40px -12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);}
+        
+        /* --- Styles for Lecture Selection --- */
+        .lecture-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .lecture-card { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; cursor: pointer; text-align: center; transition: all var(--transition-smooth); animation: scaleIn .5s ease both; box-shadow: 0 8px 25px -10px rgba(0,0,0,0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;}
+        .lecture-card:hover { transform: translateY(-8px); border-color: var(--color-primary); box-shadow: 0 12px 30px -10px rgba(var(--rgb-primary), 0.3); }
+        .lecture-card-icon { font-size: 3rem; color: var(--color-primary); line-height: 1; }
+        .lecture-card h2 { font-family:var(--font-title); font-size: 1.5rem; color: var(--color-text); margin-bottom: 0.25rem; transition: color var(--transition-smooth); }
+        .lecture-card p { font-size: 0.9rem; color: var(--color-text-muted); transition: color var(--transition-smooth); }
+        
+        /* --- Styles for Quiz Screen --- */
+        .quiz-container { display: flex; flex-direction: column; gap: 1.5rem; }
+		.quiz-header { display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.5rem;}
+        .exit-btn { background: transparent; border: 1px solid var(--color-border); color: var(--color-text); width: 44px; height: 44px; border-radius: 50%; cursor: pointer; transition: var(--transition); display: flex; justify-content: center; align-items: center; font-size: 1.5rem; flex-shrink: 0;}
+        .exit-btn:hover { border-color: var(--color-primary); color: var(--color-primary); transform: scale(1.05); }
+		.quiz-header h2 { font-family:var(--font-title); font-size: 1.2rem; font-weight: 700; margin-left: auto; line-height: 1.3; text-align: right;}
+		.question-nav { display: flex; align-items: center; gap: 0.5rem;}
+        .nav-arrow { background: transparent; border: 1px solid var(--color-border); color: var(--color-text); width: 44px; height: 44px; border-radius: 50%; cursor: pointer; transition: var(--transition); display:flex; justify-content: center; align-items: center;}
+        .nav-arrow:hover:not(:disabled) { border-color: var(--color-primary); color: var(--color-primary); }
+        .nav-arrow:disabled { opacity: 0.4; cursor: not-allowed;}
+        .nav-input { width: 70px; height: 44px; background: rgba(0,0,0,0.2); border: 1px solid var(--color-border); border-radius: var(--radius-md); color: var(--color-text); text-align: center; font-family: var(--font-title); font-weight: 700; font-size: 1.2rem; -moz-appearance: textfield; }
+        .nav-input::-webkit-outer-spin-button, .nav-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+		.question-text { font-family:var(--font-title); font-size: 1.4rem; font-weight: 600; margin-top: 0; line-height: 1.7; text-align: left; direction: ltr;}
+        .options-grid { display: flex; flex-direction: column; gap: 0.75rem; text-align: left; direction: ltr; }
+        .option-btn { width: 100%; padding: 1rem; font-family: var(--font-body); font-size: 1rem; font-weight: 600; border: 1px solid var(--color-border); border-radius: var(--radius-md); cursor: pointer; background: transparent; color: var(--color-text); transition: all .2s ease-in-out; text-align: left; }
+        .option-btn:not([disabled]):hover { background: rgba(var(--rgb-primary), 0.1); border-color: var(--color-primary); }
+        .option-btn.selected { background: rgba(var(--rgb-primary), 0.2); border-color: var(--color-primary); }
+        .option-btn.correct { background: rgba(var(--rgb-correct), 0.2); border-color: var(--color-save-green); color: #fff; }
+        .option-btn.incorrect { background: rgba(var(--rgb-danger), 0.2); border-color: var(--color-danger-red); }
+		.option-btn:disabled { cursor: not-allowed; opacity: 0.8; }
+        .fill-in-blank-input { width:100%; background:rgba(0,0,0,0.3); border:1px solid var(--color-border); border-radius:var(--radius-full); padding:.9rem 1.2rem; color:var(--color-text); font-family:var(--font-body); font-size:1rem; transition: background-color var(--transition-smooth), border-color var(--transition-smooth), color var(--transition-smooth); text-align: center;}
+		.fill-in-blank-input:focus{outline:none; border-color: var(--color-primary); box-shadow:0 0 0 3px rgba(var(--rgb-primary), 0.4);}
+        .matching-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; direction: ltr;}
+		.matching-item { font-weight: 600; text-align: center;}
+        .matching-select { width:100%; background:rgba(0,0,0,0.3); border:1px solid var(--color-border); border-radius:var(--radius-full); padding:.9rem 1.2rem; color:var(--color-text); font-family:var(--font-body); font-size:1rem; transition: var(--transition-smooth); }
+        .finish-quiz-btn { width:100%; animation:fadeInUp .5s ease .2s both; background: linear-gradient(90deg, #00b047, var(--color-save-green)); padding: 1rem; font-family: var(--font-body); font-size: 1.1rem; font-weight: 700; border: none; border-radius: var(--radius-full); cursor: pointer; transition: all .2s ease-in-out; color: #fff;}
+        .finish-quiz-btn:hover { box-shadow:0 4px 15px rgba(var(--rgb-correct),0.25); filter: brightness(1.1); transform: translateY(-3px);}
+		.feedback-section { margin-top: 1.5rem; padding: 1.25rem; border-radius: var(--radius-md); animation: fadeInUp 0.5s ease; text-align: center; }
+        .feedback-section.correct { background: rgba(var(--rgb-correct), 0.1); border: 1px solid rgba(var(--rgb-correct), 0.2); }
+        .feedback-section.incorrect { background: rgba(var(--rgb-danger), 0.1); border: 1px solid rgba(var(--rgb-danger), 0.2); }
+        .feedback-title { font-family:var(--font-title); font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;}
+        .feedback-title.correct { color: var(--color-save-green); }
+        .feedback-title.incorrect { color: var(--color-danger-red); }
+        .feedback-reason { color: var(--color-text-muted); font-size: 1rem; line-height: 1.8; direction: ltr; text-align: left; }
+        
+        /* --- Styles for Results Screen --- */
+		.result-section{display:flex; flex-direction: column; align-items:center;gap:1.5rem; padding:1.5rem;border-radius:var(--radius);animation:fadeInUp .6s ease both;transition:background .4s ease;}
+		.chart-container{position:relative;width:150px;height:150px}
+		.donut-chart{width:100%;height:100%;transform:rotate(-90deg)}
+		.donut-chart-bg{fill:none;stroke:var(--color-border);stroke-width:10; transition: stroke var(--transition-smooth);}
+		.donut-chart-fg{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), stroke 0.4s ease}
+		.donut-chart-fg.safe{stroke:var(--color-primary)}
+		.donut-chart-fg.warning{stroke:var(--color-warning-gold)}
+		.donut-chart-fg.danger{stroke:var(--color-danger-red)}
+		.chart-info{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center}
+		.chart-info span{font-family:var(--font-title);font-weight:700;font-size:2.5rem;color:#fff;line-height:1.1; transition: color var(--transition-smooth);}
+		.chart-info p{font-size:.9rem;color:var(--color-text-muted);margin-top:0.25rem; transition: color var(--transition-smooth);}
+		.score-summary { text-align: center; margin-top: 1rem; font-size: 1.2rem; font-weight: 700;}
+        .results-actions { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; width: 100%; }
+        
+        /* --- Styles for Review Screen --- */
+        .review-container { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;}
+        .review-question-item { border: 1px solid var(--color-border); padding: 1.5rem; border-radius: var(--radius-md); text-align: right;}
+        .review-question-text { font-family:var(--font-title); font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; font-weight: 700; direction: ltr; text-align: left;}
+        .review-answers { font-size: 1rem; line-height: 1.8; direction: ltr; text-align: left;}
+        .review-answers .user-answer.correct { color: var(--color-save-green); font-weight: bold;}
+        .review-answers .user-answer.incorrect { color: var(--color-danger-red); text-decoration: line-through; }
+		.review-answers .correct-answer { color: var(--color-primary); font-weight: bold; }
+        .review-answers ul { list-style-position: inside; padding-left: 0;}
+
+        .footer{text-align:center;color:var(--color-text-muted);font-size:1rem;display:flex;justify-content:center;align-items:center;padding-top:1rem;border-top:1px solid var(--color-border);animation:fadeInUp .8s var(--transition-smooth) .8s both; transition: color var(--transition-smooth), border-color var(--transition-smooth);}
+
+		.light-mode { --color-bg: #f9f9f9; --color-card: rgba(255, 255, 255, 0.75); --color-border: rgba(0, 0, 0, 0.09); --color-text: #202020; --color-text-muted: #707070; }
+        .light-mode .card, .light-mode .lecture-card { box-shadow: 0 16px 40px -12px rgba(0,0,0,0.1); }
+        .light-mode .chart-info span, .light-mode .lecture-card h2 { color: var(--color-text); }
+		.light-mode .option-btn { border-color: rgba(0,0,0,0.15); color: #333;}
+		.light-mode .option-btn:not([disabled]):hover { background: rgba(var(--rgb-primary), 0.1); border-color: var(--color-primary); }
+		.light-mode .option-btn.selected { background: rgba(var(--rgb-primary), 0.2); border-color: var(--color-primary); }
+		.light-mode .option-btn.correct { background: rgba(var(--rgb-correct), 0.15); border-color: var(--color-save-green); color: #000; }
+		.light-mode .option-btn.incorrect { background: rgba(var(--rgb-danger), 0.15); border-color: var(--color-danger-red); }
+		.light-mode .fill-in-blank-input, .light-mode .matching-select { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.08); color: var(--color-text); }
+        .light-mode .nav-arrow, .light-mode .exit-btn { border-color: #ddd; }
+        .light-mode .nav-input { border-color: #ddd; background: #f9f9f9; }
+
+		@media (max-width: 600px) {
+			.app { padding: 1.5rem 1rem; }
+			.card { padding: 1.25rem; }
+			.title { font-size: 2.2rem; }
+            .quiz-header { flex-wrap: wrap; }
+            .quiz-header h2 { order: -1; width: 100%; text-align: center; margin-bottom: 1rem; }
+			.matching-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+		}
+
+	</style>
+</head>
+<body>
+    <div class="cosmic-bg-container">
+        <div class="nebula-glow"></div>
+        <canvas id="starfield-canvas"></canvas>
+    </div>
+
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+	<div id="root"></div>
+
+	<script type="text/babel">
+		const { useState, useEffect, useMemo, useCallback, StrictMode, useRef } = React;
+		
+		const SvgIcon = ({ d, viewBox = "0 0 24 24", ...props }) => (
+			<svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox={viewBox} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" {...props}>
+				<path d={d}></path>
+			</svg>
+		);
+        
+        // --- QUIZ DATA ---
+		const quizData = {
+			"lecture1": {
+				"title": "GE105 - المحاضرة الأولى",
+				"subtitle": "Introduction to Engineering and Technology",
+                "icon": "M12 6c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6 2.69-6 6-6m0-2c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8z",
+				"questions": [
+                    { "type": "mcq", "questionText": "What are key traits of a successful engineer?", "options": ["Good communication skills and teamwork", "Strong grasp of physical laws and mathematics", "Lifelong learning and service to others", "All of the above"], "correctAnswer": "All of the above", "reason": "A successful engineer is a problem solver who possesses communication skills, teamwork abilities, a firm understanding of fundamental principles, and a commitment to lifelong learning." },
+                    { "type": "mcq", "questionText": "Engineers consider which of the following factors when designing products?", "options": ["Cost, safety, reliability", "Aesthetics only", "Efficiency and sustainability", "Both a) and c)"], "correctAnswer": "Both a) and c)", "reason": "Engineers focus on multiple factors such as cost, efficiency, reliability, safety, and sustainability to ensure optimal product design." },
+                    { "type": "mcq", "questionText": "Which area of engineering involves designing mass transit systems?", "options": ["Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "Chemical Engineering"], "correctAnswer": "Civil Engineering", "reason": "Civil engineers design and supervise the construction of mass transit systems like highways, bridges, and public utilities." },
+                    { "type": "mcq", "questionText": "Good engineers need which skill to work well in a global market?", "options": ["Time management", "Written and oral communication", "People skills", "Problem-solving abilities", "All of the above"], "correctAnswer": "All of the above", "reason": "Engineers require communication skills, time management, and interpersonal abilities to collaborate efficiently in a global context." },
+                    { "type": "mcq", "questionText": "Which of the following is NOT typically part of an engineer's role?", "options": ["Supervising manufacturing processes", "Creating art for public spaces", "Designing buildings and bridges", "Improving food safety"], "correctAnswer": "Creating art for public spaces", "reason": "Engineers focus on designing and improving products and processes, not creating art, though aesthetics may sometimes be considered." },
+                    { "type": "mcq", "questionText": "What is the main reason for engineers to continuously pursue education?", "options": ["To avoid job layoffs", "To keep pace with rapid technological changes", "For promotion and salary increases", "For improving company profits"], "correctAnswer": "To keep pace with rapid technological changes", "reason": "Lifelong learning ensures engineers stay updated with new technologies and are not left behind in a fast-evolving field." },
+                    { "type": "mcq", "questionText": "Which products would likely be designed by engineers using physical and chemical laws?", "options": ["Cars and computers", "Clothing and fashion accessories", "Sculptures", "Paintings"], "correctAnswer": "Cars and computers", "reason": "Engineers apply physical and chemical principles to design functional products like cars, computers, and other technological devices." },
+                    { "type": "mcq", "questionText": "Why is sustainability a key factor in engineering design?", "options": ["It reduces manufacturing costs", "It ensures long-term environmental protection", "It increases the speed of production", "It improves product appearance"], "correctAnswer": "It ensures long-term environmental protection", "reason": "Sustainability is crucial for reducing environmental impact and ensuring resources are available for future generations." },
+                    { "type": "mcq", "questionText": "Which of the following is true about engineers' work environment?", "options": ["Engineers mostly work alone", "Engineers work in teams to solve complex problems", "Engineers only deal with clients", "Engineers do not interact with other disciplines"], "correctAnswer": "Engineers work in teams to solve complex problems", "reason": "Engineers typically work in team environments, where tasks are divided and collaboration is necessary for success." },
+                    { "type": "mcq", "questionText": "How do engineers ensure the safety and reliability of the products they design?", "options": ["By guessing the outcome", "By ignoring testing procedures", "By performing tests under various conditions", "By consulting non-engineers"], "correctAnswer": "By performing tests under various conditions", "reason": "Engineers rigorously test their products to ensure they meet safety and reliability standards under various loads and conditions." },
+					{ "type": "mcq", "questionText": "What is the primary focus of engineering technology programs?", "options": ["Advanced mathematical theories", "Application of technologies and processes", "Quantum mechanics", "Pure scientific research"], "correctAnswer": "Application of technologies and processes", "reason": "Engineering technology programs emphasize hands-on, application-oriented work, rather than theoretical or advanced mathematics." },
+					{ "type": "mcq", "questionText": "Which of the following is NOT typically required for an engineering technologist?", "options": ["Integral and differential calculus", "Complex design theory", "Basic mathematics", "Application of engineering principles"], "correctAnswer": "Complex design theory", "reason": "Engineering technologists focus more on practical applications rather than complex design theories, which are more typical for engineers." },
+					{ "type": "mcq", "questionText": "One of the important factors engineers must consider in material selection is:", "options": ["The color of the material", "The weight of the end product", "Ultimate strength", "The availability of the material locally"], "correctAnswer": "Ultimate strength", "reason": "Engineers must choose materials based on properties like ultimate strength, flexibility, and durability to ensure the success of the design." },
+					{ "type": "mcq", "questionText": "In project scheduling, the primary goal is to:", "options": ["Reduce the cost of the project", "Ensure project completion within time and budget", "Minimize the number of personnel", "Eliminate all risks associated with the project"], "correctAnswer": "Ensure project completion within time and budget", "reason": "Project scheduling is used to plan and control time and resource allocation to meet deadlines and budget limits." },
+					{ "type": "mcq", "questionText": "Which of the following is a key component of teamwork in engineering?", "options": ["Individual goals take priority", "Team members with the same skillset", "Complementary expertise", "Lack of communication"], "correctAnswer": "Complementary expertise", "reason": "Teams with diverse, complementary skills work more efficiently and effectively toward common goals." },
+					{ "type": "mcq", "questionText": "What is the first step in the engineering design process?", "options": ["Defining the problem", "Conceptualizing ideas", "Recognizing the need for a product or service", "Doing research"], "correctAnswer": "Recognizing the need for a product or service", "reason": "Identifying the need is the critical first step in any design process, as it guides all subsequent steps." },
+					{ "type": "mcq", "questionText": "Which factor is NOT considered in sustainability in design?", "options": ["Earth's finite resources", "Environmental impact", "Social factors", "The designer's personal interests"], "correctAnswer": "The designer's personal interests", "reason": "Sustainability considers broad, systemic factors like environmental and social impacts, not personal preferences." },
+					{ "type": "mcq", "questionText": "Why is attending classes regularly important for engineering students?", "options": ["To socialize with classmates", "To ensure understanding of fundamental concepts", "To get a break from homework", "Because it's required by law"], "correctAnswer": "To ensure understanding of fundamental concepts", "reason": "Regular attendance ensures that students stay on top of the material and are prepared for exams and projects." },
+					{ "type": "mcq", "questionText": "Which of the following is NOT a trait of a successful engineering team?", "options": ["Respect for team members", "Clear, realistic goals", "Self-centered leadership", "Open communication"], "correctAnswer": "Self-centered leadership", "reason": "Effective teams prioritize collective goals over individual desires and maintain respect and communication." },
+					{ "type": "mcq", "questionText": "Why are intellectual property rights like patents important?", "options": ["They prevent inventions from ever being shared", "They ensure companies can sell products at high prices", "They protect inventors' ideas from being stolen", "They make inventions more expensive"], "correctAnswer": "They protect inventors' ideas from being stolen", "reason": "Intellectual property rights ensure that creators can benefit from their innovations by preventing unauthorized use." },
+					{ "type": "mcq", "questionText": "Which branch of engineering focuses on the extraction and processing of minerals?", "options": ["Civil Engineering", "Mechanical Engineering", "Mining and Metallurgical Engineering", "Chemical Engineering"], "correctAnswer": "Mining and Metallurgical Engineering", "reason": "Mining engineers focus on extracting minerals safely and efficiently, while metallurgical engineers work on shaping metals and improving their properties." },
+					{ "type": "mcq", "questionText": "What future challenge is mentioned for mechanical engineering in the aerospace industry?", "options": ["Modernizing infrastructure", "Improving solar energy systems", "Building faster, more efficient, and safer aircraft", "Extracting oil from under the ocean"], "correctAnswer": "Building faster, more efficient, and safer aircraft", "reason": "Mechanical engineers are tasked with improving materials for aerospace applications, including space stations and space transportation vehicles." },
+					{ "type": "mcq", "questionText": "Civil engineers must be familiar with which of the following to ensure the design and construction of sound foundations?", "options": ["Types of chemicals", "Energy transfer systems", "Soil consistencies", "Electromechanical systems"], "correctAnswer": "Soil consistencies", "reason": "Civil engineers must understand soil properties to design and build sound foundations for infrastructure projects." },
+					{ "type": "mcq", "questionText": "Which branch of engineering has the responsibility of developing fusion energy systems?", "options": ["Mechanical Engineering", "Electrical Engineering", "Chemical Engineering", "Civil Engineering"], "correctAnswer": "Chemical Engineering", "reason": "Chemical engineers are involved in the development of new energy systems like fusion and solar energy." },
+					{ "type": "mcq", "questionText": "Which of the following is a modern-day challenge for civil engineers?", "options": ["Creating new pharmaceuticals", "Developing efficient power-delivery systems", "Extracting minerals from the ocean", "Building lasers for medical technology"], "correctAnswer": "Developing efficient power-delivery systems", "reason": "Civil engineers face challenges in modernizing infrastructure and creating efficient systems for power delivery and environmental maintenance." },
+					{ "type": "mcq", "questionText": "Which engineering field emerged from the combination of electrical and mechanical engineering?", "options": ["Civil Engineering", "Electromechanical Engineering", "Aerospace Engineering", "Renewable Energy"], "correctAnswer": "Electromechanical Engineering", "reason": "Early electrical engineers worked as electromechanical technologists, contributing to the emergence of electromechanical engineering." },
+					{ "type": "mcq", "questionText": "Mining engineers need knowledge from which other engineering discipline to construct safe mine shafts?", "options": ["Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Computer Engineering"], "correctAnswer": "Civil Engineering", "reason": "Mining engineers must understand civil engineering principles to ensure the construction of safe and well-ventilated mine shafts." },
+					{ "type": "mcq", "questionText": "Which area is primarily involved with energy-transfer and energy-conversion devices like motors and generators?", "options": ["Civil Engineering", "Chemical Engineering", "Mechanical Engineering", "Mining Engineering"], "correctAnswer": "Mechanical Engineering", "reason": "Mechanical engineers focus on energy-transfer and energy-conversion devices, which include motors and generators." },
+					{ "type": "mcq", "questionText": "One of the greatest challenges for chemical engineers in the future will be:", "options": ["Development of safer aircraft", "Designing new roadways", "Developing clean, non-polluting energy systems", "Modernizing civil infrastructure"], "correctAnswer": "Developing clean, non-polluting energy systems", "reason": "Chemical engineers will be focused on creating efficient and environmentally friendly energy systems like solar and fusion energy." },
+					{ "type": "mcq", "questionText": "Which of the following is a responsibility of civil engineers?", "options": ["Designing lasers for radiation", "Building public utility systems", "Manufacturing pharmaceuticals", "Developing computer systems"], "correctAnswer": "Building public utility systems", "reason": "Civil engineers are responsible for constructing infrastructure such as roads, bridges, and utility systems." },
+                    { "type": "fill", "questionText": "Engineers apply physical and chemical laws and principles and ________ to design millions of products and services.", "correctAnswer": "mathematics", "reason": "Engineers use both physical and chemical principles, along with mathematics, to develop and design practical products." },
+                    { "type": "fill", "questionText": "Successful engineers have good ________ skills that enable them to communicate effectively with colleagues and clients.", "correctAnswer": "communication", "reason": "Communication skills are essential for engineers to collaborate with their teams and convey ideas to non-engineers." },
+                    { "type": "fill", "questionText": "Engineers are dedicated to ________ learning to keep up with rapid technological advances.", "correctAnswer": "lifelong", "reason": "Continuous education helps engineers stay updated with emerging technologies and advancements in their field." },
+                    { "type": "fill", "questionText": "Engineers are problem solvers and apply ________ thinking to address complex issues.", "correctAnswer": "analytical", "reason": "Analytical thinking allows engineers to break down complex problems and find effective solutions." },
+                    { "type": "fill", "questionText": "When designing a product, engineers consider important factors such as cost, efficiency, reliability, safety, and ________.", "correctAnswer": "sustainability", "reason": "Sustainability is a key consideration in modern engineering design to minimize environmental impacts." },
+                    { "type": "fill", "questionText": "Good engineers possess a firm grasp of ________ laws, which they use to solve various technical challenges.", "correctAnswer": "fundamental physical", "reason": "Engineers rely on fundamental physical laws to understand and solve problems in design and manufacturing." },
+                    { "type": "fill", "questionText": "Engineers often work in teams and must be good ________ players to be productive in solving complex problems.", "correctAnswer": "team", "reason": "Teamwork is vital in engineering as complex tasks are divided among different team members with specialized skills." },
+                    { "type": "fill", "questionText": "Engineers design and supervise the construction of ________ systems, including dams, highways, and mass transit systems.", "correctAnswer": "infrastructure", "reason": "Engineers play a major role in the design and maintenance of critical infrastructure systems." },
+                    { "type": "fill", "questionText": "Engineering technology programs typically focus more on the ________ of technologies and processes.", "correctAnswer": "application", "reason": "The emphasis is on hands-on, practical application rather than complex theory." },
+                    { "type": "fill", "questionText": "Engineering technologists assist engineers in solving problems in manufacturing, construction, ________ and research.", "correctAnswer": "product development", "reason": "Technologists support engineers in various industries through practical applications." },
+                    { "type": "fill", "questionText": "In project scheduling, a well-planned schedule helps to eliminate ________ in task assignments.", "correctAnswer": "redundancy", "reason": "Efficient scheduling ensures that tasks are not duplicated, improving efficiency." },
+                    { "type": "fill", "questionText": "________ is the process engineers use to arrive at the best possible solution to a problem.", "correctAnswer": "Optimization", "reason": "Optimization ensures the solution is the most effective and efficient." },
+                    { "type": "fill", "questionText": "________ is an essential part of successful teamwork in engineering.", "correctAnswer": "Communication", "reason": "Clear communication ensures that all team members are aligned and understand their roles." },
+                    { "type": "fill", "questionText": "Engineers must consider factors such as ultimate strength, machinability, and ________ when selecting materials for a project.", "correctAnswer": "durability", "reason": "Durability ensures that materials will last and perform under expected conditions." },
+                    { "type": "fill", "questionText": "Engineering design processes begin with recognizing the ________ for a product or service.", "correctAnswer": "need", "reason": "Identifying the need is the first and most critical step in the design process." },
+                    { "type": "fill", "questionText": "Sustainable design requires considering ________ resources and environmental factors.", "correctAnswer": "finite", "reason": "Earth's resources are limited, and sustainable design addresses their responsible use." },
+                    { "type": "fill", "questionText": "Mining engineers must understand ________ to build safe and ventilated mine shafts.", "correctAnswer": "Civil engineering", "reason": "Civil engineering knowledge is essential for mining engineers to ensure mine shafts are safe and structurally sound." },
+                    { "type": "fill", "questionText": "One of the primary concerns for metallurgical engineers is improving the ________ of metals.", "correctAnswer": "Properties", "reason": "Metallurgical engineers work on enhancing metallic properties like strength, hardness, and stiffness." },
+                    { "type": "fill", "questionText": "A future challenge for chemical engineers is the development of ________ energy systems.", "correctAnswer": "Fusion", "reason": "Chemical engineers are working toward developing advanced energy systems like fusion and solar power." },
+                    { "type": "fill", "questionText": "Civil engineers are responsible for designing and building ________ that support society's infrastructure.", "correctAnswer": "Foundations", "reason": "Civil engineers must create strong foundations for infrastructure projects." },
+                    { "type": "fill", "questionText": "Mechanical engineers often work with ________ systems, including motors and generators.", "correctAnswer": "Energy-conversion", "reason": "Mechanical engineers design systems that convert energy, like motors and generators." },
+                    { "type": "fill", "questionText": "The field of ________ involves the development of efficient, non-polluting energy systems.", "correctAnswer": "Chemical engineering", "reason": "Chemical engineers are focused on developing new, clean energy systems." },
+                    { "type": "fill", "questionText": "Mining engineers are responsible for safely and efficiently ________ minerals from the ground.", "correctAnswer": "Extracting", "reason": "Mining engineers focus on the extraction of minerals while ensuring safety." },
+                    { "type": "fill", "questionText": "A key challenge for mechanical engineers in aerospace is creating more ________ materials.", "correctAnswer": "Efficient", "reason": "Mechanical engineers in aerospace need to develop materials that are more efficient, lightweight, and strong." },
+					{ type: 'match', questionText: 'Match the type of engineering task with its corresponding discipline:', leftSide: ["Designing buildings and highways", "Testing cars for durability", "Supervising power plant construction", "Developing new materials", "Extracting petroleum", "Increasing food product safety"], rightSide: ["Civil Engineering", "Mechanical Engineering", "Electrical Engineering", "Chemical Engineering", "Petroleum Engineering", "Agricultural Engineering"], correctAnswer: { "Designing buildings and highways": "Civil Engineering", "Testing cars for durability": "Mechanical Engineering", "Supervising power plant construction": "Electrical Engineering", "Developing new materials": "Chemical Engineering", "Extracting petroleum": "Petroleum Engineering", "Increasing food product safety": "Agricultural Engineering" }, reason: "Each engineering discipline has a specialized set of responsibilities. Matching them correctly demonstrates an understanding of the diverse roles within the engineering field." },
+                    { type: 'match', questionText: 'Match the common trait with the corresponding characteristic:', leftSide: ["Problem-solving", "Good communication skills", "Lifelong learning", "Time management", "Team player", "Creativity"], rightSide: ["Ability to analyze complex issues", "Effective collaboration", "Staying updated with technology", "Working efficiently", "Consulting with colleagues", "Developing innovative solutions"], correctAnswer: { "Problem-solving": "Ability to analyze complex issues", "Good communication skills": "Effective collaboration", "Lifelong learning": "Staying updated with technology", "Time management": "Working efficiently", "Team player": "Consulting with colleagues", "Creativity": "Developing innovative solutions" }, reason: "These traits are essential for an engineer's success, pairing fundamental skills with their practical outcomes in the workplace." },
+                    { type: 'match', questionText: 'Match the activity with its description:', leftSide: ["Designing products", "Managing conflicts", "Budgeting your time", "Optimizing design results", "Engineering technologist", "Sustainable design"], rightSide: ["Requires following a step-by-step design process", "Promoting respect and openness in the team", "Efficient use of time for project completion", "Refining the best possible solution", "Focuses on practical applications and assisting engineers", "Involves social, environmental, and economic factors"], correctAnswer: { "Designing products": "Requires following a step-by-step design process", "Managing conflicts": "Promoting respect and openness in the team", "Budgeting your time": "Efficient use of time for project completion", "Optimizing design results": "Refining the best possible solution", "Engineering technologist": "Focuses on practical applications and assisting engineers", "Sustainable design": "Involves social, environmental, and economic factors" }, reason: "Understanding these key activities and concepts is fundamental to the engineering practice, from project management to design philosophy." },
+                    { type: 'match', questionText: 'Match the concept to its correct association in engineering:', leftSide: ["Patents", "Engineering design process", "Preparing for engineering career", "Material selection", "Networking in engineering", "Conflict resolution"], rightSide: ["Can protect intellectual property", "Testing different concepts", "Volunteering, voting, and collaboration", "Involves properties like strength and machinability", "Important for professional growth", "Helps resolve issues in teamwork"], correctAnswer: { "Patents": "Can protect intellectual property", "Engineering design process": "Testing different concepts", "Preparing for engineering career": "Volunteering, voting, and collaboration", "Material selection": "Involves properties like strength and machinability", "Networking in engineering": "Important for professional growth", "Conflict resolution": "Helps resolve issues in teamwork" }, reason: "These concepts represent different facets of the engineering profession, from legal protection and technical processes to career development and soft skills." },
+                    { type: 'match', questionText: 'Match the branches of engineering with their primary responsibilities:', leftSide: ["Civil Engineering", "Mechanical Engineering", "Mining and Metallurgical Engineering", "Chemical Engineering", "Electrical Engineering", "Aerospace Engineering"], rightSide: ["Constructing public utility systems", "Designing energy-transfer systems", "Extracting minerals safely", "Developing new pharmaceuticals", "Improving communication systems", "Designing safer, efficient aircraft"], correctAnswer: { "Civil Engineering": "Constructing public utility systems", "Mechanical Engineering": "Designing energy-transfer systems", "Mining and Metallurgical Engineering": "Extracting minerals safely", "Chemical Engineering": "Developing new pharmaceuticals", "Electrical Engineering": "Improving communication systems", "Aerospace Engineering": "Designing safer, efficient aircraft" }, reason: "Correctly identifying the primary roles of different engineering branches shows a clear understanding of the specializations within the field." }
+                ]
+			},
+			"lecture2": {
+                "title": "GE105 - المحاضرة الثانية",
+                "subtitle": "Codes and Standards",
+                "icon": "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM11 7h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2z",
+                "questions": [
+					{ "type": "mcq", "questionText": "What is the primary purpose of engineering codes and standards?", "options": ["To enhance aesthetic appeal", "To ensure safety, reliability, and performance", "To reduce costs of construction", "To promote artistic designs"], "correctAnswer": "To ensure safety, reliability, and performance", "reason": "Codes and standards provide guidelines to ensure the safety, reliability, and performance of engineered systems." },
+                    { "type": "mcq", "questionText": "Which of the following correctly differentiates codes from standards?", "options": ["Codes are voluntary; standards are mandatory", "Standards are legally enforceable; codes are not", "Codes set regulations; standards provide guidelines", "Codes and standards are identical"], "correctAnswer": "Codes set regulations; standards provide guidelines", "reason": "Codes are legally enforceable regulations, while standards are voluntary guidelines." },
+                    { "type": "mcq", "questionText": "Why are codes reviewed and updated periodically?", "options": ["To adjust for inflation", "To align with political environments", "To reflect the latest technologies and designs", "To maintain historical practices"], "correctAnswer": "To reflect the latest technologies and designs", "reason": "Codes and standards are updated to incorporate technological advancements and new designs." },
+                    { "type": "mcq", "questionText": "What is a key difference between codes and standards?", "options": ["Standards are region-specific; codes are universal", "Codes are mandatory by law; standards are not", "Codes are for professionals only; standards are for the public", "Standards require government approval; codes do not"], "correctAnswer": "Codes are mandatory by law; standards are not", "reason": "Codes are legally enforceable, whereas standards are voluntary." },
+                    { "type": "mcq", "questionText": "Which statement about standards is TRUE?", "options": ["Standards are mandatory for all projects", "Standards provide additional guidance on best practices", "Standards replace codes in legal documents", "Standards are always government-enforced"], "correctAnswer": "Standards provide additional guidance on best practices", "reason": "Standards are voluntary guidelines that complement codes." },
+                    { "type": "mcq", "questionText": "Which of the following sectors is NOT explicitly linked with seismic codes?", "options": ["Energy efficiency", "Earthquake safety", "Structural design", "Construction of buildings"], "correctAnswer": "Energy efficiency", "reason": "Seismic codes focus on structural safety during earthquakes, not energy efficiency." },
+                    { "type": "mcq", "questionText": "What do electrical codes typically include?", "options": ["Insulation requirements", "Fire prevention methods", "Overcurrent protection standards", "Guidelines for HVAC systems"], "correctAnswer": "Overcurrent protection standards", "reason": "Electrical codes include wiring, grounding, and overcurrent protection." },
+                    { "type": "mcq", "questionText": "How do codes contribute to professionalism in engineering?", "options": ["By ensuring aesthetically pleasing designs", "By standardizing work quality and safety", "By reducing project costs", "By simplifying engineering education"], "correctAnswer": "By standardizing work quality and safety", "reason": "Codes act as benchmarks for professional practice, ensuring a standard level of quality and safety." },
+                    { "type": "mcq", "questionText": "Which is a key purpose of energy codes?", "options": ["Seismic load resistance", "Protection from fire hazards", "Energy efficiency in buildings", "Structural durability"], "correctAnswer": "Energy efficiency in buildings", "reason": "Energy codes are focused on energy efficiency, including insulation, lighting, and HVAC systems." },
+                    { "type":- "mcq", "questionText": "What does the ASME Boiler and Pressure Vessel Code (BPVC) govern?", "options": ["Electrical installations", "Structural concrete design", "Boilers and pressure vessels", "Functional safety standards"], "correctAnswer": "Boilers and pressure vessels", "reason": "BPVC sets the standard for designing, manufacturing, and inspecting boilers and pressure vessels." },
+                    { "type": "mcq", "questionText": "What is a challenge in applying engineering codes and standards?", "options": ["Establishing new codes for every project", "Staying current with revisions", "Avoiding mandatory compliance", "Ignoring multidisciplinary approaches"], "correctAnswer": "Staying current with revisions", "reason": "Staying updated with the latest changes in codes and standards is a key challenge for engineers." },
+                    { "type": "mcq", "questionText": "What does the Saudi Mechanical Code (SBC 501) regulate?", "options": ["Electrical wiring systems", "Instrumentation safety", "HVAC and mechanical systems", "Welding standards"], "correctAnswer": "HVAC and mechanical systems", "reason": "SBC 501 focuses on mechanical systems such as HVAC and plumbing." },
+                    { "type": "mcq", "questionText": "Which code provides guidelines for quality management systems?", "options": ["ASME BPVC", "ISO 9001", "NEC", "NFPA 13"], "correctAnswer": "ISO 9001", "reason": "ISO 9001 outlines quality management system guidelines." },
+                    { "type": "mcq", "questionText": "The ASTM primarily focuses on standards related to which of the following?", "options": ["Fire prevention and safety", "Material test methods and properties", "Drinking water contaminants", "Electrical installations"], "correctAnswer": "Material test methods and properties", "reason": "ASTM develops standards for testing the mechanical and physical properties of various materials." },
+                    { "type": "mcq", "questionText": "The ISO primarily works to:", "options": ["Publish the National Fire Alarm Code®", "Develop international standards for trade and safety", "Set European safety standards", "Monitor water quality in the U.S."], "correctAnswer": "Develop international standards for trade and safety", "reason": "ISO facilitates global trade by establishing common standards." },
+                    { "type": "mcq", "questionText": "What does the 'CЄ' marking on a product signify?", "options": ["Compliance with American standards", "Approval by the British Standards Institute", "Conformity to European safety and environmental standards", "Certification by the EPA"], "correctAnswer": "Conformity to European safety and environmental standards", "reason": "The CЄ marking ensures compliance with European Union safety and environmental regulations." },
+                    { "type": "mcq", "questionText": "What does MCLG represent in drinking water standards?", "options": ["The legally enforceable level", "The maximum safe level of contaminants without health risks", "Minimum water quality goals", "Maximum level for aesthetic purposes"], "correctAnswer": "The maximum safe level of contaminants without health risks", "reason": "MCLG (Maximum Contaminant Level Goal) indicates the level causing no known harmful health effects." },
+                    { "type": "mcq", "questionText": "What type of testing is NOT directly associated with ASTM?", "options": ["Testing semiconductors", "Fire prevention systems", "Residual stress testing", "Soil texture testing"], "correctAnswer": "Fire prevention systems", "reason": "Fire prevention is the domain of NFPA, not ASTM." },
+                    { "type": "mcq", "questionText": "Which of the following is NOT a function of ASTM?", "options": ["Testing physical properties of paint films", "Testing mechanical properties of materials", "Developing codes for fire safety", "Evaluating fuel properties"], "correctAnswer": "Developing codes for fire safety", "reason": "Fire safety codes are developed by NFPA, not ASTM." },
+                    { "type": "fill", "questionText": "Codes are ________ enforceable regulations adopted by governments.", "correctAnswer": "legally", "reason": "Codes are mandatory regulations enforced by law." },
+                    { "type": "fill", "questionText": "Standards are ________ guidelines that provide best practices.", "correctAnswer": "voluntary", "reason": "Standards are not legally enforceable but serve as guidelines." },
+                    { "type": "fill", "questionText": "Fire and life safety codes set standards to protect against ________ hazards.", "correctAnswer": "fire or life safety", "reason": "Fire and life safety codes ensure protection against such hazards." },
+                    { "type": "fill", "questionText": "Seismic codes are designed to withstand ________ loads.", "correctAnswer": "earthquake", "reason": "Seismic codes as standards for earthquake safety." },
+                    { "type": "fill", "questionText": "Building codes include requirements for ________ system design.", "correctAnswer": "electrical", "reason": "Building codes address fire, electrical, and accessibility requirements." },
+                    { "type": "fill", "questionText": "________ codes address the reliability of wiring and grounding systems.", "correctAnswer": "Electrical", "reason": "Electrical codes ensure reliability and safety in wiring and grounding." },
+                    { "type": "fill", "questionText": "Energy codes promote ________ in HVAC and lighting systems.", "correctAnswer": "efficiency", "reason": "Energy codes promote efficiency in building systems." },
+                    { "type": "fill", "questionText": "Standards are often created by ________ organizations and professional societies.", "correctAnswer": "industry", "reason": "Industry organizations are major creators of standards." },
+                    { "type": "fill", "questionText": "The ANSI is a ________ organization that supports the development of standards by various groups.", "correctAnswer": "not-for-profit", "reason": "ANSI is a non-profit that oversees the development of voluntary consensus standards." },
+                    { "type": "fill", "questionText": "Standards for medical devices and equipment are developed by ________.", "correctAnswer": "ASTM", "reason": "ASTM sets standards for various medical and industrial materials." },
+					{ type: 'match', questionText: 'Match the type of code to its primary feature:', leftSide: ['Building codes', 'Electrical codes', 'Fire and life safety codes', 'Seismic codes', 'Energy codes', 'Mechanical codes'], rightSide: ['Electrical system design', 'Overcurrent protection', 'Fire prevention', 'Earthquake safety', 'Insulation and lighting systems', 'HVAC and plumbing systems'], correctAnswer: { 'Building codes': 'Electrical system design', 'Electrical codes': 'Overcurrent protection', 'Fire and life safety codes': 'Fire prevention', 'Seismic codes': 'Earthquake safety', 'Energy codes': 'Insulation and lighting systems', 'Mechanical codes': 'HVAC and plumbing systems'}, reason: "Each code is designed for a specific purpose to ensure safety and performance in different areas of construction and engineering." },
+                    { type: 'match', questionText: 'Match the term with its correct description:', leftSide: ['Codes', 'Standards', 'Energy codes', 'Seismic codes', 'Electrical codes', 'Building codes'], rightSide: ['Legally enforceable regulations', 'Voluntary guidelines', 'Efficiency in HVAC systems', 'Earthquake load resistance', 'Grounding and wiring', 'Fire and life safety'], correctAnswer: { 'Codes': 'Legally enforceable regulations', 'Standards': 'Voluntary guidelines', 'Energy codes': 'Efficiency in HVAC systems', 'Seismic codes': 'Earthquake load resistance', 'Electrical codes': 'Grounding and wiring', 'Building codes': 'Fire and life safety'}, reason: "Distinguishing between these terms is crucial for understanding regulatory compliance and best practices in engineering." },
+                    { type: 'match', "questionText": 'Match the organization to its primary function:', "leftSide": ['ANSI', 'ASTM', 'NFPA', 'ISO', 'CЄ', 'EPA'], "rightSide": ['Assists in developing standards', 'Material testing procedures', 'Fire safety and prevention codes', 'Develops international standards', 'Conformity to European standards', 'Drinking water contaminant levels'], "correctAnswer": { 'ANSI': 'Assists in developing standards', 'ASTM': 'Material testing procedures', 'NFPA': 'Fire safety and prevention codes', 'ISO': 'Develops international standards', 'CЄ': 'Conformity to European standards', 'EPA': 'Drinking water contaminant levels' }, "reason": "Each organization plays a distinct role in the ecosystem of standards and regulations, from development and testing to enforcement." },
+                    { "type": 'match', "questionText": 'Match the acronym to its definition or associated entity:', "leftSide": ['MCL', 'MCLG', 'BSI', 'DIN', 'NFPA', 'ASTM'], "rightSide": ['Legally enforceable contaminant level', 'Maximum safe contaminant level', 'British Standards Institute', 'German standards organization', 'Fire safety codes', 'Material test procedures'], "correctAnswer": { 'MCL': 'Legally enforceable contaminant level', 'MCLG': 'Maximum safe contaminant level', 'BSI': 'British Standards Institute', 'DIN': 'German standards organization', 'NFPA': 'Fire safety codes', 'ASTM': 'Material test procedures' }, "reason": "Understanding these acronyms is important for navigating technical documents and standards from various regions and industries." }
+                ]
+            },
+			"lecture3": {
+				"title": "GE105 - المحاضرة الثالثة",
+				"subtitle": "Plant Layout and Industrial Safety",
+                "icon": "M20 18v-2h-2v2H6v-2H4v2H2v-4h2v-2h2v2h8v-2h2v2h2v4h-2zm-8-9H8v4h4v-4zm-2-2h2v-2h4v2h2V7h-2V5h-4v2H8v2zm8 0h2v4h-2V7zM4 7h2v4H4V7z",
+                "questions": [
+                    { "type": "mcq", "questionText": "Plant layout specifies:", "options": ["Position of materials only", "Position of machines only", "Position of man power only", "Position and overall arrangement of various facilities"], "correctAnswer": "Position and overall arrangement of various facilities", "reason": "Plant layout specifies the overall arrangement of all resources and facilities to achieve efficiency." },
+                    { "type": "mcq", "questionText": "Which is an objective of good plant layout?", "options": ["Minimize material movement", "Minimize movement of workers", "Minimize waiting time", "All of the above"], "correctAnswer": "All of the above", "reason": "A good layout aims to optimize flow, reduce movement and waiting time, and maximize space utilization." },
+                    { "type": "mcq", "questionText": "Ships, airplanes, and large aircraft are usually fabricated using which layout?", "options": ["Fixed or project layout", "Line or product layout", "Process or functional layout", "Combination or group layout"], "correctAnswer": "Fixed or project layout", "reason": "In a fixed layout, the product stays in place while resources are brought to it, which is suitable for very large items like ships." },
+                    { "type": "mcq", "questionText": "When one or a few large items are to be fabricated, what kind of layout is suggested?", "options": ["Fixed or project layout", "Line or product layout", "Process or functional layout", "Combination or group layout"], "correctAnswer": "Fixed or project layout", "reason": "Fixed layout is ideal for large, single-item production where moving the product is impractical." },
+                    { "type": "mcq", "questionText": "In which layout are all resources (Man, materials, tools) brought to the site?", "options": ["Fixed or project layout", "Line or product layout", "Process or functional layout", "Combination or group layout"], "correctAnswer": "Fixed or project layout", "reason": "The defining characteristic of a fixed or project layout is that the main component is stationary and resources are moved to it." },
+                    { "type": "mcq", "questionText": "In which layout are similar machines and operations grouped together according to their functions?", "options": ["Fixed or project layout", "Line or product layout", "Process or functional layout", "Combination or group layout"], "correctAnswer": "Process or functional layout", "reason": "A process/functional layout groups similar resources together in departments, offering flexibility for varied production." },
+                    { "type": "mcq", "questionText": "In which layout are all machines placed in a line according to the sequence of operations?", "options": ["Fixed or project layout", "Line or product layout", "Process or functional layout", "Combination or group layout"], "correctAnswer": "Line or product layout", "reason": "A line or product layout arranges machinery in sequence to facilitate a smooth, linear production flow, ideal for mass production." },
+                    { "type":- "mcq", "questionText": "Which of the following are industrial safety considerations?", "options": ["Adequate ventilation", "Sufficient working area", "Clear pathways", "Provision for adequate personnel facilities", "All the above"], "correctAnswer": "All the above", "reason": "Industrial safety is a comprehensive field that includes environmental controls, space management, clear access routes, and employee welfare." },
+                    { "type": "mcq", "questionText": "What is an important objective of industrial safety?", "options": ["Prevent loss of life and disability", "Eliminate work stoppages", "Educate members on safety principles", "Achieve better morale", "All the above"], "correctAnswer": "All the above", "reason": "Industrial safety aims to protect employees, maintain productivity, foster a safety culture, and improve morale." },
+                    { "type": "mcq", "questionText": "Accidents due to operating machines without knowledge or safety precautions are caused by:", "options": ["Human causes", "Mechanical causes", "Environmental causes", "Both human and mechanical causes"], "correctAnswer": "Human causes", "reason": "Human factors like lack of training, negligence, and improper use of tools are a primary cause of industrial accidents." },
+                    { "type": "mcq", "questionText": "Accidents due to improper temperature, dust, and poor housekeeping are caused by:", "options": ["Human causes", "Mechanical causes", "Environmental causes", "Both human and mechanical causes"], "correctAnswer": "Environmental causes", "reason": "The physical work environment, including factors like temperature, air quality, and cleanliness, significantly impacts safety." },
+                    { "type": "mcq", "questionText": "Accidents due to use of old machines, poor maintenance, and unguarded equipment are caused by:", "options": ["Human causes", "Mechanical causes", "Environmental causes", "All the above"], "correctAnswer": "Mechanical causes", "reason": "Failure of equipment, lack of safety guards, and poor maintenance fall under mechanical causes of accidents." },
+                    { "type": "mcq", "questionText": "Which of the following items are available in a first aid box?", "options": ["Scissors and sterilized dressings", "Cotton wool and rolled bandages", "Adhesive plaster and Dettol", "All the above"], "correctAnswer": "All the above", "reason": "A comprehensive first aid kit should contain a variety of supplies to treat minor injuries, including dressings, bandages, and antiseptics." }
+                ]
+			},
+            "lecture4": {
+                "title": "GE105 - المحاضرة الرابعة",
+                "subtitle": "Measurement Systems",
+                "icon": "M13 5.92L17.5 13H13v6h-2v-6H6.5L11 5.92V4h2v1.92zM17.5 3c1.33 0 2.59.35 3.69 1.02a.5.5 0 01-.38.86A9.957 9.957 0 0011 3.55V2a1 1 0 00-2 0v1.55a10 10 0 00-5.83 5.86c-.1.25.12.51.38.45C5.81 9.4 8.28 9 11 9c.17 0 .34 0 .5.01L11 9c2.72 0 5.19.4 7.42.88.26.06.49-.2.38-.45A10.873 10.873 0 0017.5 3z",
+                "questions": [
+                    { "type": "mcq", "questionText": "What is the SI unit for length?", "options": ["Pound", "Meter", "Gallon", "Kilogram"], "correctAnswer": "Meter", "reason": "In the metric system (SI), the standard unit for measuring length is the meter." },
+                    { "type": "mcq", "questionText": "Which unit of weight is used in the Imperial and US systems?", "options": ["Newton", "Kilogram", "Pound", "Hertz"], "correctAnswer": "Pound", "reason": "The pound is the unit of weight in the Imperial and US systems, whereas the metric system uses kilograms and Newtons." },
+                    { "type": "mcq", "questionText": "1 kilogram-force (kgf) is equivalent to how many Newtons (N)?", "options": ["9.81 N", "1.0 N", "10 N", "32.17 N"], "correctAnswer": "9.81 N", "reason": "Weight is calculated as W = mg. 1 kilogram-force is the force exerted by 1 kg of mass under standard gravity (9.81 m/s²), which equals 9.81 Newtons." },
+                    { "type": "mcq", "questionText": "What is the temperature at the triple point of water?", "options": ["0 K", "0.01°C", "32.018°F", "Both B and C"], "correctAnswer": "Both B and C", "reason": "The triple point of water, where it exists as solid, liquid, and gas simultaneously, occurs at 0.01°C, which is equivalent to 32.018°F." },
+                    { "type": "mcq", "questionText": "What is the equivalent of 1 megatonne (Mt) in kilograms?", "options": ["1000 kg", "10^6 kg", "10^9 kg", "10^12 kg"], "correctAnswer": "10^9 kg", "reason": "A megatonne (Mt) is equal to 10^9 kilograms." },
+                    { "type": "mcq", "questionText": "The Kelvin temperature scale is set so that its zero is at:", "options": ["The freezing point of water", "The boiling point of water", "The absolute zero", "The triple point of water"], "correctAnswer": "The absolute zero", "reason": "The Kelvin scale begins at absolute zero (0 K), the theoretical temperature where molecular motion ceases." },
+                    { "type": "mcq", "questionText": "Which of the following is a measure of the amount of substance?", "options": ["Volt", "Mole", "Ampere", "Candela"], "correctAnswer": "Mole", "reason": "The mole is the SI unit used to measure the amount of a substance." },
+                    { "type": "mcq", "questionText": "What is the standard acceleration due to gravity used for weight calculation?", "options": ["9.81 m/s²", "10 m/s²", "8.5 m/s²", "32.2 ft/s²"], "correctAnswer": "9.81 m/s²", "reason": "The standard acceleration due to gravity (g) is approximately 9.81 m/s² and is used in calculations involving weight (W = mg)." },
+                    { "type": "mcq", "questionText": "Which of the following prefixes represents 10^6 in the metric system?", "options": ["Milli", "Micro", "Mega", "Giga"], "correctAnswer": "Mega", "reason": "The prefix 'Mega' (M) is used for 10^6, commonly applied to express large units." },
+                    { "type": "mcq", "questionText": "What is the SI unit for electric current?", "options": ["Ohm", "Volt", "Ampere", "Hertz"], "correctAnswer": "Ampere", "reason": "The ampere (A) is the SI unit for electric current." },
+                    { "type": "mcq", "questionText": "What is the length of a baseplate measuring 3.76 feet converted to inches?", "options": ["35.52 in.", "40.52 in.", "45.12 in.", "50.76 in."], "correctAnswer": "45.12 in.", "reason": "Since 1 ft = 12 inches, you calculate 3.76 * 12 = 45.12 inches." },
+                    { "type": "mcq", "questionText": "How many feet is 4 ft 8 1/2 inches converted to feet only?", "options": ["4.75 ft.", "4.625 ft.", "4.83 ft.", "4.70833 ft."], "correctAnswer": "4.70833 ft.", "reason": "8.5 inches = 8.5/12 feet ≈ 0.70833 ft. Thus 4 ft + 0.70833 ft = 4.70833 ft." },
+                    { "type": "mcq", "questionText": "If 1 slug equals 32.17405 lb, what is the mass of an object weighing 150 lb in slugs?", "options": ["4.77 sl", "5.05 sl", "4.67 sl", "4.95 sl"], "correctAnswer": "4.67 sl", "reason": "To convert pounds (force) to slugs (mass), you divide by the acceleration of gravity. Or, using the provided conversion: 150 lb / 32.17405 lb/slug ≈ 4.66 sl." },
+                    { "type": "mcq", "questionText": "How many inches are in 3.5 feet?", "options": ["36 in.", "42 in.", "46 in.", "48 in."], "correctAnswer": "42 in.", "reason": "Since 1 ft = 12 inches, you calculate 3.5 * 12 = 42 inches." },
+                    { "type": "mcq", "questionText": "What is the width of a standard railroad track in inches? (4 ft 8 1/2 in)", "options": ["54.49 in.", "56.49 in.", "60 in.", "58 in."], "correctAnswer": "56.49 in.", "reason": "(4 ft * 12 in/ft) + 8.5 in = 48 in + 8.5 in = 56.5 inches." },
+                    { "type": "mcq", "questionText": "How many feet are in 1 mile?", "options": ["5280 ft", "1000 ft", "3600 ft", "4000 ft"], "correctAnswer": "5280 ft", "reason": "A standard mile is defined as 5280 feet." },
+                    { "type": "mcq", "questionText": "What is the conversion factor for converting grams to kilograms?", "options": ["1000 g = 1 kg", "100 g = 1 kg", "1 g = 0.001 kg", "Both A and C"], "correctAnswer": "Both A and C", "reason": "1 kilogram is equal to 1000 grams, which also means 1 gram is equal to 0.001 kilograms." },
+                    { "type": "mcq", "questionText": "If the velocity of a rocket is 60 mph, what is it in feet per second?", "options": ["88 ft/s", "120 ft/s", "75 ft/s", "95 ft/s"], "correctAnswer": "88 ft/s", "reason": "A common engineering conversion is 60 mph = 88 ft/s." },
+                    { "type": "fill", "questionText": "The fundamental unit of mass in the metric system is the ________.", "correctAnswer": "kilogram", "reason": "The kilogram (kg) is the base unit for mass in the metric system, with all other units derived from it." },
+                    { "type": "fill", "questionText": "The ________ point of water is the condition where it exists as solid, liquid, and gas at the same time.", "correctAnswer": "triple", "reason": "The triple point is a unique thermodynamic state where all three phases of water coexist." },
+                    { "type": "fill", "questionText": "In the Imperial system, 1 pound is equal to ________ grams.", "correctAnswer": "453.59", "reason": "One pound (lb) is equivalent to 453.59 grams in the metric system." },
+                    { "type": "fill", "questionText": "The SI unit for luminous intensity is the ________.", "correctAnswer": "candela", "reason": "The candela (cd) is the base unit of luminous intensity in the SI system." },
+                    { "type": "fill", "questionText": "The ________ is defined as the distance traveled by light in a vacuum in 1/299,792,458 seconds.", "correctAnswer": "meter", "reason": "The meter is the base unit of length in the SI system, defined by the speed of light." },
+                    { "type": "fill", "questionText": "The SI unit for frequency is ________.", "correctAnswer": "hertz", "reason": "Hertz (Hz) measures the number of cycles per second, and it is the standard unit for frequency." },
+                    { "type": "fill", "questionText": "The Avogadro constant is 6.023 × 10^23 ________.", "correctAnswer": "mole⁻¹", "reason": "The Avogadro constant represents the number of entities per mole and is a fundamental constant in chemistry." },
+                    { "type": "fill", "questionText": "One foot is equal to ________ inches.", "correctAnswer": "12", "reason": "1 ft = 12 in is a standard conversion factor." },
+                    { "type": "fill", "questionText": "There are ________ seconds in one hour.", "correctAnswer": "3600", "reason": "1 hr = 60 min, and 1 min = 60 s, so 1 hr = 60 * 60 = 3600 s." },
+                    { "type": "fill", "questionText": "To convert inches to feet, divide the number of inches by ________.", "correctAnswer": "12", "reason": "Since there are 12 inches in a foot, you divide by 12 to convert inches to feet." },
+                    { type: 'match', questionText: 'Match the units with their correct quantities:', leftSide: ["Kilogram", "Meter", "Candela", "Ampere", "Mole", "Newton"], rightSide: ["Mass", "Length", "Luminous intensity", "Electric current", "Amount of substance", "Force"], correctAnswer: { "Kilogram": "Mass", "Meter": "Length", "Candela": "Luminous intensity", "Ampere": "Electric current", "Mole": "Amount of substance", "Newton": "Force" }, reason: "Matching SI base units to their corresponding physical quantities is fundamental to understanding measurement systems." },
+                    { type: 'match', questionText: 'Match the prefixes with their powers of 10:', leftSide: ["Mega", "Milli", "Giga", "Micro", "Kilo", "Nano"], rightSide: ["10^6", "10^-3", "10^9", "10^-6", "10^3", "10^-9"], correctAnswer: { "Mega": "10^6", "Milli": "10^-3", "Giga": "10^9", "Micro": "10^-6", "Kilo": "10^3", "Nano": "10^-9" }, reason: "These are standard SI prefixes used to denote multiples and submultiples of units, making it easier to express very large or small numbers." },
+                    { type: 'match', questionText: 'Match the units to their conversions:', leftSide: ["1 km", "1 mile", "1 liter", "1 in.", "1 kg", "1 ft"], rightSide: ["1000 m", "5280 ft", "0.26417 gal", "2.54 cm", "1000 g", "12 in"], correctAnswer: { "1 km": "1000 m", "1 mile": "5280 ft", "1 liter": "0.26417 gal", "1 in.": "2.54 cm", "1 kg": "1000 g", "1 ft": "12 in" }, reason: "Knowing these common conversion factors is essential for working between metric and imperial systems in engineering and daily life." }
+                ]
+            }
+		};
+		
+		const mid462Data = {
+			"mid462": {
+				"title": "الاختبار النصفي - Mid 462",
+				"subtitle": "محاكاة للاختبار الفصلي",
+				"icon": "M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z",
+				"questions": [
+                    { "type": "mcq", "questionText": "Q1. Why is sustainability a key factor in engineering design?", "options": ["a) It reduces manufacturing costs", "b) It ensures long-term environmental protection", "c) It increases the speed of production", "d) It improves product appearance", "e) None of the above"], "correctAnswer": "b) It ensures long-term environmental protection", "reason": "Sustainability ensures the responsible use of resources and minimizes environmental impact for future generations." },
+                    { "type": "mcq", "questionText": "Q2. What is the primary focus of engineering technology programs?", "options": ["a) Advanced mathematical theories", "b) Application of technologies and processes", "c) Quantum mechanics", "d) Pure scientific research", "e) Historical engineering concepts"], "correctAnswer": "b) Application of technologies and processes", "reason": "Engineering technology focuses on the practical application of engineering principles." },
+                    { "type": "mcq", "questionText": "Q3. Which of the following is NOT typically required for an engineering technologist?", "options": ["a) Integral and differential calculus", "b) Complex design theory", "c) Basic mathematics", "d) Application of engineering principles", "e) Assisting in experiments and tests"], "correctAnswer": "b) Complex design theory", "reason": "Complex design theory is more characteristic of engineering programs, whereas technologist programs focus on application." },
+                    { "type": "mcq", "questionText": "Q4. What is the main reason for engineers to continuously pursue education?", "options": ["a) To avoid job layoffs", "b) To keep pace with rapid technological changes", "c) For promotion and salary increases", "d) For improving company profits", "e) All of the above"], "correctAnswer": "b) To keep pace with rapid technological changes", "reason": "Lifelong learning is crucial for staying current with fast-evolving technologies in the engineering field." },
+                    { "type": "mcq", "questionText": "Q5. Which of the following is true about engineers' work environment?", "options": ["a) Engineers mostly work alone", "b) Engineers work in teams to solve complex problems", "c) Engineers only deal with clients", "d) Engineers do not interact with other disciplines", "e) Engineers never attend meetings"], "correctAnswer": "b) Engineers work in teams to solve complex problems", "reason": "Collaboration is a key aspect of modern engineering, as complex problems often require a multidisciplinary team approach." },
+                    { "type": "mcq", "questionText": "Q6. How do engineers ensure the safety and reliability of the products they design?", "options": ["a) By guessing the outcome", "b) By ignoring testing procedures", "c) By performing tests under various conditions", "d) By consulting non-engineers", "e) None of the above"], "correctAnswer": "c) By performing tests under various conditions", "reason": "Rigorous testing under a wide range of conditions is fundamental to ensuring product safety and reliability." },
+                    { "type": "mcq", "questionText": "Q7. What is the primary purpose of engineering codes and standards?", "options": ["a) To enhance aesthetic appeal of engineered systems", "b) To ensure safety, reliability, and performance", "c) To reduce costs of construction", "d) To promote artistic designs in engineering", "e) To improve only fire safety"], "correctAnswer": "b) To ensure safety, reliability, and performance", "reason": "Codes and standards establish a baseline for quality, ensuring public safety and consistent performance of engineered systems." },
+                    { "type": "mcq", "questionText": "Q8. Which of the following correctly differentiates codes from standards?", "options": ["a) Codes are voluntary; standards are mandatory", "b) Standards are legally enforceable; codes are not", "c) Codes set regulations; standards provide guidelines", "d) Codes and standards are identical in application", "e) Both are enforced by law"], "correctAnswer": "c) Codes set regulations; standards provide guidelines", "reason": "Codes are typically legally binding regulations, while standards are often voluntary guidelines representing best practices." },
+                    { "type": "mcq", "questionText": "Q9. Why are codes reviewed and updated periodically?", "options": ["a) To adjust for inflation", "b) To align with changing political environments", "c) To reflect the latest technologies and designs", "d) To maintain historical practices", "e) To simplify legal requirements"], "correctAnswer": "c) To reflect the latest technologies and designs", "reason": "Periodic updates are necessary to incorporate new materials, technologies, and understanding of safety and performance." },
+                    { "type": "mcq", "questionText": "Q10. What is a key difference between codes and standards?", "options": ["a) Standards are region-specific; codes are universal", "b) Codes are for professionals only; standards are for the public", "c) Codes are mandatory by law; standards are not", "d) Standards require government approval; codes do not", "e) Codes are specific to mechanical systems only"], "correctAnswer": "c) Codes are mandatory by law; standards are not", "reason": "The key distinction is legal enforceability: codes are generally mandatory, whereas standards are voluntary unless referenced by law." },
+                    { "type": "fill", "questionText": "Q21. The first step in the engineering design process is ________ for a product or service.", "correctAnswer": "recognizing the need", "reason": "Identifying a need or problem is the catalyst for the entire engineering design process." },
+                    { "type": "fill", "questionText": "Q22. ________ engineers focus on improving the properties of metals, such as strength and hardness.", "correctAnswer": "Metallurgical", "reason": "Metallurgical engineering is the branch that deals with the physical and chemical behavior of metallic elements and their alloys." },
+                    { "type": "fill", "questionText": "Q23. ________ is a key consideration in engineering design to ensure long-term environmental protection.", "correctAnswer": "Sustainability", "reason": "Sustainability aims to meet the needs of the present without compromising the ability of future generations to meet their own needs." },
+                    { "type": "fill", "questionText": "Q24. Engineering codes and standards are developed to ensure the ________, reliability, and performance of engineered systems.", "correctAnswer": "safety", "reason": "Safety is a primary driver for the creation and enforcement of engineering codes and standards." },
+                    { "type": "fill", "questionText": "Q25. The ________ is the maximum level of a contaminant in drinking water that causes no known harmful health effects.", "correctAnswer": "MCLG (Maximum Contaminant Level Goal)", "reason": "MCLG is a non-enforceable public health goal set by the EPA." },
+                    { type: 'match', questionText: 'Q31. Match the Engineering Trait with Its Description', leftSide: ["1. Problem-solving", "2. Lifelong learning", "3. Teamwork", "4. Analytical thinking", "5. Communication skills"], rightSide: ["a) Ability to work well with others", "b) Staying updated with new technologies", "c) Breaking down complex problems", "d) Writing technical reports", "e) Conveying ideas effectively"], correctAnswer: {"1. Problem-solving": "c) Breaking down complex problems", "2. Lifelong learning": "b) Staying updated with new technologies", "3. Teamwork": "a) Ability to work well with others", "4. Analytical thinking": "c) Breaking down complex problems", "5. Communication skills": "e) Conveying ideas effectively"}, reason: "These are core competencies for successful engineers, linking personal traits to professional actions."},
+                    { type: 'match', questionText: 'Q32. Match the Engineering Design Step with Its Description', leftSide: ["1. Recognizing the need", "2. Defining the problem", "3. Conceptualizing ideas", "4. Synthesizing results", "5. Presenting the solution"], rightSide: ["a) Generating creative ideas", "b) Identifying the need for a product", "c) Clearly understanding the problem", "d) Combining and refining ideas", "e) Communicating the final design"], correctAnswer: {"1. Recognizing the need": "b) Identifying the need for a product", "2. Defining the problem": "c) Clearly understanding the problem", "3. Conceptualizing ideas": "a) Generating creative ideas", "4. Synthesizing results": "d) Combining and refining ideas", "5. Presenting the solution": "e) Communicating the final design"}, reason: "These steps form the iterative cycle of the engineering design process, from initial concept to final presentation."},
+                    { type: 'match', questionText: 'Q33. Match the Organization with Its Role', leftSide: ["1. ANSI", "2. ASTM", "3. ISO", "4. NFPA", "5. ASME"], rightSide: ["a) Develops international standards", "b) Sets standards for fire safety", "c) Assists in developing U.S. standards", "d) Publishes material test methods", "e) Provides guidelines for mechanical engineering"], correctAnswer: {"1. ANSI": "c) Assists in developing U.S. standards", "2. ASTM": "d) Publishes material test methods", "3. ISO": "a) Develops international standards", "4. NFPA": "b) Sets standards for fire safety", "5. ASME": "e) Provides guidelines for mechanical engineering"}, reason: "Each of these organizations plays a critical, distinct role in the world of standards and regulations that govern engineering."}
+				]
+			}
+		}
+
+		const combinedQuizData = {...quizData, ...mid462Data};
+
+		const useAnimatedNumber = (target, duration = 500) => {
+			const [currentNumber, setCurrentNumber] = useState(target);
+			const frameRef = useRef();
+			const startNumberRef = useRef(target);
+			const startTimeRef = useRef();
+			useEffect(() => { const startNumber = startNumberRef.current; startTimeRef.current = performance.now(); const animate = (currentTime) => { const elapsedTime = currentTime - startTimeRef.current; const progress = Math.min(elapsedTime / duration, 1); const easeOutProgress = 1 - Math.pow(1 - progress, 3); const newNumber = startNumber + (target - startNumber) * easeOutProgress; setCurrentNumber(newNumber); if (progress < 1) { frameRef.current = requestAnimationFrame(animate); } else { startNumberRef.current = target; } }; frameRef.current = requestAnimationFrame(animate); return () => cancelAnimationFrame(frameRef.current); }, [target, duration]);
+			return currentNumber;
+		};
+
+        const AnimatedNumber = ({ value, formatter = (n) => n.toFixed(1) }) => {
+			const animatedValue = useAnimatedNumber(value);
+			return <>{formatter(animatedValue)}</>;
+		};
+
+        function DonutChart({ percentage }) {
+			const animatedPercentage = useAnimatedNumber(percentage);
+            const status = percentage >= 80 ? 'safe' : percentage >= 50 ? 'warning' : 'danger';
+			const circumference = 2 * Math.PI * 45;
+			const offset = circumference - (animatedPercentage / 100) * circumference;
+			return (
+				<div className="chart-container">
+					<svg className="donut-chart" viewBox="0 0 100 100"><circle className="donut-chart-bg" cx="50" cy="50" r="45" /><circle className={`donut-chart-fg ${status}`} cx="50" cy="50" r="45" strokeDasharray={circumference} strokeDashoffset={Math.max(0, offset)} /></svg>
+					<div className="chart-info">
+						<span><AnimatedNumber value={percentage} />%</span>
+						<p>النتيجة</p>
+					</div>
+				</div>
+			);
+		};
+
+        function LectureSelectionScreen({ onSelectLecture }) {
+            return (
+                <div className="card">
+                    <h1 style={{textAlign: 'center', fontFamily: 'var(--font-title)', fontWeight: '700', marginBottom: '2rem'}}>اختر اختبارًا للبدء</h1>
+                    <div className="lecture-grid">
+                        {Object.entries(combinedQuizData).map(([id, data], index) => (
+                            <div key={id} className="lecture-card" style={{animationDelay: `${index * 100}ms`}} onClick={() => onSelectLecture(id)}>
+                                <div className="lecture-card-icon">
+									<SvgIcon d={data.icon} />
+								</div>
+                                <h2>{data.title}</h2>
+                                <p>{data.subtitle}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+        function CompactNavigator({ currentIndex, total, onNavigate }) {
+            const [inputValue, setInputValue] = useState(currentIndex + 1);
+
+            useEffect(() => {
+                setInputValue(currentIndex + 1);
+            }, [currentIndex]);
+
+            const handleInputChange = (e) => {
+                setInputValue(e.target.value);
+            };
+
+            const handleInputBlur = (e) => {
+                let value = parseInt(e.target.value, 10);
+                if (isNaN(value) || value < 1) value = 1;
+                if (value > total) value = total;
+                onNavigate(value - 1);
+            };
+
+            const handleKeyDown = (e) => {
+                if (e.key === 'Enter') {
+                    handleInputBlur(e);
+                    e.target.blur();
+                }
+            };
+            
+            const handlePrev = () => onNavigate(currentIndex - 1);
+            const handleNext = () => onNavigate(currentIndex + 1);
+
+            return (
+                <div className="question-nav">
+                    <button className="nav-arrow" onClick={handlePrev} disabled={currentIndex === 0}>
+                        <SvgIcon d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                    </button>
+                    <input 
+                        type="number"
+                        className="nav-input"
+                        value={inputValue}
+                        onChange={handleInputChange}
+                        onBlur={handleInputBlur}
+                        onKeyDown={handleKeyDown}
+                        min="1"
+                        max={total}
+                    />
+                    <button className="nav-arrow" onClick={handleNext} disabled={currentIndex === total - 1}>
+                        <SvgIcon d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                    </button>
+                </div>
+            );
+        }
+
+        function FeedbackDisplay({ question, userAnswer }) {
+            let isCorrect = false;
+            if (question.type === 'mcq') {
+                isCorrect = userAnswer === question.correctAnswer;
+            } else if (question.type === 'fill') {
+                isCorrect = userAnswer && userAnswer.trim().toLowerCase() === question.correctAnswer.toLowerCase();
+            } else if (question.type === 'match') {
+                isCorrect = userAnswer && Object.keys(question.correctAnswer).length === Object.keys(userAnswer).length && Object.keys(question.correctAnswer).every(key => userAnswer[key] === question.correctAnswer[key]);
+            }
+            
+            return (
+                <div className={`feedback-section ${isCorrect ? 'correct' : 'incorrect'}`}>
+                    <h3 className={`feedback-title ${isCorrect ? 'correct' : 'incorrect'}`}>{isCorrect ? 'إجابة صحيحة!' : 'إجابة خاطئة.'}</h3>
+                    <p className="feedback-reason">{question.reason}</p>
+                </div>
+            );
+        }
+
+
+		function QuizScreen({ lectureId, onFinish, onExit }) {
+            const lecture = combinedQuizData[lectureId];
+            const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+            const [userAnswers, setUserAnswers] = useState({});
+            
+            const isAnswered = useMemo(() => userAnswers[currentQuestionIndex] !== undefined, [userAnswers, currentQuestionIndex]);
+
+            const currentQuestion = lecture.questions[currentQuestionIndex];
+            
+            const handleAnswerSelect = (selectedAnswer) => {
+                if(isAnswered) return;
+                setUserAnswers(prev => ({...prev, [currentQuestionIndex]: selectedAnswer}));
+            };
+            
+            const jumpToQuestion = (index) => {
+                setCurrentQuestionIndex(index);
+            };
+
+            const handleExit = () => {
+                Swal.fire({
+                    title: 'هل أنت متأكد؟',
+                    text: "سيتم حفظ تقدمك، ويمكنك المتابعة لاحقًا.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: 'var(--color-primary)',
+                    cancelButtonColor: 'var(--color-danger-red)',
+                    confirmButtonText: 'نعم، خروج!',
+                    cancelButtonText: 'إلغاء',
+                    background: 'var(--color-card)',
+                    color: 'var(--color-text)',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        onExit();
+                    }
+                })
+            };
+
+            const allAnswered = Object.keys(userAnswers).length === lecture.questions.length;
+            
+            const renderQuestion = () => {
+                 const shuffledOptions = useMemo(() => {
+                    if (currentQuestion.type === 'match') {
+                        return [...currentQuestion.rightSide].sort(() => 0.5 - Math.random());
+                    }
+                    return null;
+                }, [currentQuestion.type, currentQuestion.rightSide, currentQuestionIndex]);
+
+                const userAnswer = userAnswers[currentQuestionIndex];
+
+                switch (currentQuestion.type) {
+                    case "mcq":
+                        return (
+                            <div className="options-grid">
+                                {currentQuestion.options.map((option, index) => {
+                                    let btnClass = 'option-btn';
+                                    if(isAnswered) {
+                                        if (option === currentQuestion.correctAnswer) btnClass += ' correct';
+                                        else if (option === userAnswer) btnClass += ' incorrect';
+                                    }
+                                    return <button key={index} className={btnClass} onClick={() => handleAnswerSelect(option)} disabled={isAnswered}>{option}</button>;
+                                })}
+                            </div>
+                        );
+                    case "fill":
+                         return (
+                            <input 
+                                type="text"
+                                className="fill-in-blank-input"
+                                placeholder={isAnswered ? '' : "اكتب إجابتك ثم اضغط Enter"}
+                                defaultValue={userAnswer || ''}
+                                readOnly={isAnswered}
+                                onBlur={(e) => !isAnswered && e.target.value.trim() && handleAnswerSelect(e.target.value.trim())}
+                                onKeyDown={e => {
+                                    if (e.key === 'Enter' && !isAnswered && e.target.value.trim()) {
+                                        handleAnswerSelect(e.target.value.trim());
+                                        e.target.blur(); 
+                                    }
+                                }}
+                            />
+                         );
+                     case "match":
+                         const leftSide = currentQuestion.leftSide;
+                         const currentSelections = userAnswer || {};
+
+                         const handleMatchChange = (leftItem, rightItem) => {
+                            const newSelections = {...currentSelections, [leftItem]: rightItem };
+                            setUserAnswers(prev => ({...prev, [currentQuestionIndex]: newSelections}));
+                         }
+                        
+                         return (
+                             <div className="matching-grid">
+                                 {leftSide.map((leftItem, idx) => (
+                                     <React.Fragment key={idx}>
+                                        <div className="matching-item">{leftItem.replace(/^\d+\.\s/, '')}</div>
+                                        <div><SvgIcon d="M4 12l1.41 1.41L12 6.83l6.59 6.58L20 12l-8-8-8 8z" style={{transform: 'rotate(90deg)', margin: '0 0.5rem'}} /></div>
+                                        <select className="matching-select" value={currentSelections[leftItem] || ""} onChange={(e) => handleMatchChange(leftItem, e.target.value)} disabled={isAnswered}>
+                                             <option value="" disabled>اختر الإجابة...</option>
+                                             {shuffledOptions.map(opt => <option key={opt} value={opt}>{opt.replace(/^[a-z]\)\s/, '')}</option>)}
+                                         </select>
+                                     </React.Fragment>
+                                 ))}
+                             </div>
+                         );
+
+                    default: return <p>Unknown question type</p>;
+                }
+            }
+
+            return(
+                <div className="card quiz-container" key={currentQuestionIndex}>
+					<div className="quiz-header">
+                        <CompactNavigator
+                            currentIndex={currentQuestionIndex}
+                            total={lecture.questions.length}
+                            onNavigate={jumpToQuestion}
+                        />
+						<h2>{lecture.title}</h2>
+                         <button className="exit-btn" onClick={handleExit} title="العودة إلى قائمة المحاضرات">
+                           <SvgIcon d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" style={{transform: 'scaleX(-1)'}} />
+                        </button>
+					</div>
+
+                    <div style={{animation: 'fadeIn 0.5s ease'}}>
+                        <p className="question-text">{currentQuestion.questionText}</p>
+                        {renderQuestion()}
+                    </div>
+
+                    {isAnswered && <FeedbackDisplay question={currentQuestion} userAnswer={userAnswers[currentQuestionIndex]} />}
+                    
+                    {allAnswered && (
+                         <button className="finish-quiz-btn" onClick={() => onFinish(userAnswers, lecture.questions)}>
+                           إنهاء الاختبار
+                        </button>
+                    )}
+                </div>
+            );
+        }
+
+		function ResultsScreen({ userAnswers, questions, onRestart, onHome, lectureId }) {
+			const [isReviewing, setIsReviewing] = useState(false);
+			const {score, percentage} = useMemo(() => {
+                let correctCount = 0;
+                questions.forEach((q, index) => {
+                    const userAnswer = userAnswers[index];
+                    let isCorrect = false;
+					if(q.type === 'mcq') isCorrect = userAnswer === q.correctAnswer;
+					else if(q.type === 'fill') isCorrect = userAnswer && userAnswer.trim().toLowerCase() === q.correctAnswer.toLowerCase();
+                    else if (q.type === 'match') {
+                        isCorrect = userAnswer && Object.keys(q.correctAnswer).length === Object.keys(userAnswer).length && Object.keys(q.correctAnswer).every(key => userAnswer[key] === q.correctAnswer[key]);
+                    }
+                    if(isCorrect) correctCount++;
+                });
+                return {
+                    score: correctCount,
+                    percentage: (correctCount / questions.length) * 100
+                };
+            }, [userAnswers, questions]);
+
+			if (isReviewing) {
+				return (
+					<div className="card">
+						<h2>مراجعة الإجابات</h2>
+						<div className="review-container">
+							{questions.map((q, index) => {
+								const userAnswer = userAnswers[index];
+                                let isCorrect = false;
+                                let correctAnswerDisplay = q.correctAnswer;
+
+								if (q.type === 'mcq') {
+                                    isCorrect = userAnswer === q.correctAnswer;
+                                } else if (q.type === 'fill') {
+                                    isCorrect = userAnswer && userAnswer.trim().toLowerCase() === q.correctAnswer.toLowerCase();
+                                } else if (q.type === 'match') {
+                                    isCorrect = userAnswer && Object.keys(q.correctAnswer).length === Object.keys(userAnswer).length && Object.keys(q.correctAnswer).every(key => userAnswer[key] === q.correctAnswer[key]);
+                                    correctAnswerDisplay = (<ul>{Object.entries(q.correctAnswer).map(([k, v]) => <li key={k}><strong>{k.replace(/^\d+\.\s/, '')}</strong> → {v.replace(/^[a-z]\)\s/, '')}</li>)}</ul>)
+                                }
+
+								return (
+									<div className="review-question-item" key={index}>
+										<p className="review-question-text">{q.questionText}</p>
+										<div className="review-answers">
+											<span>إجابتك: </span>
+											<span className={`user-answer ${isCorrect ? 'correct' : 'incorrect'}`}>
+                                               {q.type === 'match' && userAnswer ? (<ul>{Object.entries(userAnswer).map(([k,v]) => <li key={k}><strong>{k.replace(/^\d+\.\s/, '')}</strong> → {v.replace(/^[a-z]\)\s/, '') || 'لم يتم الاختيار'}</li>)}</ul>) : (userAnswer || 'لم تتم الإجابة')}
+                                            </span>
+											{!isCorrect && (
+												<>
+													<br />
+													<span>الإجابة الصحيحة: </span>
+													<span className="correct-answer">{correctAnswerDisplay}</span>
+												</>
+											)}
+										</div>
+									</div>
+								);
+							})}
+						</div>
+						<button className="finish-quiz-btn" style={{marginTop: '2rem', background: 'var(--color-primary)'}} onClick={() => setIsReviewing(false)}>العودة للنتائج</button>
+					</div>
+				);
+			}
+
+			return (
+				<div className="card">
+					<div className="result-section">
+						<DonutChart percentage={percentage} />
+						<h2 className="score-summary">{`لقد أجبت بشكل صحيح على ${score} من أصل ${questions.length} أسئلة.`}</h2>
+					</div>
+					<div className="results-actions">
+						<button className="finish-quiz-btn" style={{transform:'none', filter:'none', background: 'var(--color-primary)'}} onClick={() => onRestart(lectureId)}>إعادة الاختبار</button>
+						<button className="finish-quiz-btn" onClick={() => setIsReviewing(true)}>مراجعة الإجابات</button>
+						<button className="finish-quiz-btn" style={{background: 'rgba(255,255,255,0.1)'}} onClick={onHome}>العودة للقائمة الرئيسية</button>
+					</div>
+				</div>
+			);
+		}
+
+		function App() {
+            const [currentView, setCurrentView] = useState('lectureSelection'); // lectureSelection, quiz, results
+            const [activeLectureId, setActiveLectureId] = useState(null);
+            const [quizResults, setQuizResults] = useState({userAnswers: {}, questions: []});
+
+            const handleSelectLecture = (id) => {
+                setActiveLectureId(id);
+                setCurrentView('quiz');
+            }
+
+            const handleFinishQuiz = (userAnswers, questions) => {
+                setQuizResults({userAnswers, questions});
+                setCurrentView('results');
+            }
+
+            const handleGoHome = () => {
+                setActiveLectureId(null);
+                setCurrentView('lectureSelection');
+            }
+            
+            const renderView = () => {
+                switch(currentView) {
+                    case 'quiz':
+                        return <QuizScreen lectureId={activeLectureId} onFinish={handleFinishQuiz} onExit={handleGoHome} />
+                    case 'results':
+                        return <ResultsScreen 
+							{...quizResults} 
+							onRestart={handleSelectLecture}
+                            onHome={handleGoHome}
+							lectureId={activeLectureId}
+						/>
+                    case 'lectureSelection':
+                    default:
+                        return <LectureSelectionScreen onSelectLecture={handleSelectLecture} />
+                }
+            };
+			
+			return (
+				<div className="app">
+					<div className="container">
+						<header className="header">
+							<h1 className="title">GE105 - منصة الاختبارات</h1>
+							<p className="subtitle">اختبر معلوماتك في الهندسة بتجربة تفاعلية وممتعة</p>
+						</header>
+
+						{renderView()}
+
+						<footer className="footer">
+							<span className="footer-link-text">© 2025 | Thalam & M. Mutlaq</span>
+						</footer>
+					</div>
+				</div>
+			);
+		}
+		
+		const root = ReactDOM.createRoot(document.getElementById("root"));
+		root.render(<StrictMode><App /></StrictMode>);
+	</script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const initCosmicEffects = () => {
+            const canvas = document.getElementById('starfield-canvas'); if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let layers = [], shootingStars = [];
+            function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            class Star { constructor(layerConfig) { this.config = layerConfig; this.reset(); } reset() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.radius = Math.random() * this.config.maxSize + this.config.minSize; this.alpha = 0; this.alphaChange = Math.random() * 0.02 + 0.005; this.maxAlpha = Math.random() * 0.7 + 0.1; this.vx = (Math.random() - 0.5) * this.config.speed; this.vy = (Math.random() - 0.5) * this.config.speed; } draw() { if (Math.random() > 0.99) { this.alpha += this.alphaChange; if (this.alpha >= this.maxAlpha || this.alpha <= 0) this.alphaChange *= -1; } else { if (this.alpha < this.maxAlpha) this.alpha += 0.01; } ctx.globalAlpha = this.alpha; ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = `hsl(220, 80%, 95%)`; ctx.fill(); ctx.globalAlpha = 1; } update() { this.x += this.vx; this.y += this.vy; if (this.x > canvas.width + this.radius) this.x = -this.radius; if (this.x < -this.radius) this.x = canvas.width + this.radius; if (this.y > canvas.height + this.radius) this.y = -this.radius; if (this.y < -this.radius) this.y = canvas.height + this.radius; this.draw(); } }
+            class ShootingStar { constructor() { this.reset(); } reset() { this.x = Math.random() * canvas.width; this.y = 0; this.len = Math.random() * 80 + 10; this.speed = Math.random() * 10 + 6; this.size = Math.random() * 1 + 0.1; this.waitTime = new Date().getTime() + Math.random() * 3000 + 500; this.active = false; } update() { if (this.active) { this.x -= this.speed; this.y += this.speed; if (this.x < 0 || this.y >= canvas.height) this.reset(); } else if (this.waitTime < new Date().getTime()) this.active = true; } draw() { if (this.active) { ctx.strokeStyle = `hsla(220, 100%, 80%, ${Math.random() * 0.5 + 0.5})`; ctx.lineWidth = this.size; ctx.beginPath(); ctx.moveTo(this.x, this.y); ctx.lineTo(this.x + this.len, this.y - this.len); ctx.stroke(); } } }
+            function initStars() { layers = []; shootingStars = []; const layerConfigs = [ { speed: 0.05, maxSize: 0.8, minSize: 0.2, count: Math.floor(canvas.width / 8) }, { speed: 0.1, maxSize: 1.2, minSize: 0.3, count: Math.floor(canvas.width / 15) }, { speed: 0.15, maxSize: 1.5, minSize: 0.5, count: Math.floor(canvas.width / 35) } ]; layerConfigs.forEach(config => { let stars = []; for(let i=0; i<config.count; i++) { stars.push(new Star(config)); } layers.push(stars); }); for (let i = 0; i < 3; i++) { shootingStars.push(new ShootingStar()); } }
+            function animate() { requestAnimationFrame(animate); ctx.clearRect(0, 0, canvas.width, canvas.height); layers.forEach(starLayer => { starLayer.forEach(star => star.update()); }); shootingStars.forEach(s => { s.update(); s.draw(); }); }
+            window.addEventListener('resize', () => { resizeCanvas(); initStars(); });
+            resizeCanvas(); initStars(); animate();
+        };
+        initCosmicEffects();
+    });
+    </script>
+</body>
+</html>
